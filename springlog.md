@@ -27,3 +27,11 @@ All firewall turned off, the client still can't read config using ${HOME}. Will 
 3. Ctrl + Shift + A -> type "registry" -> select "Regsitry..." (make sure it's with the ellipsis/three dots)
 4. Find "compiler.automake.allow.when.app.running" key, set value to true (checked) -> Close
 5. Restart IntelliJ
+
+
+### Spring Boot to DB, HikariCP
+
+#### 9 Jul 2018 15:43
+
+It is said that: 'If you use the spring-boot-starter-jdbc or spring-boot-starter-data-jpa “starters”, you automatically get a dependency to HikariCP.'
+https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html#boot-features-connect-to-production-database
