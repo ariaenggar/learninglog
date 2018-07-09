@@ -16,3 +16,14 @@ Firewall turned off with BlockInbound,AllowOutbound policy. Will try AllowInboun
 #### 5 Jul 2018 21:59
 
 All firewall turned off, the client still can't read config using ${HOME}. Will try again later. Using file:// prefix for now.
+
+
+### Spring Hot Swap with spring-boot-devtools on IntelliJ
+
+#### 9 Jul 2018 14:59
+
+1. add "runtime('org.springframework.boot:spring-boot-devtools')" to dependencies
+2. File -> Settings -> Build, Execution, Deployment -> Compiler -> (at right panel) set "Build automatically" to checked -> OK
+3. Ctrl + Shift + A -> type "registry" -> select "Regsitry..." (make sure it's with the ellipsis/three dots)
+4. Find "compiler.automake.allow.when.app.running" key, set value to true (checked) -> Close
+5. Restart IntelliJ
