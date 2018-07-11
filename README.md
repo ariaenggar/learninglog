@@ -1,2 +1,3 @@
-# learninglog
-Log entries on my quest for learning software development tools
+# Learning Log
+
+Log entries on my software development and learning journey
