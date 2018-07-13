@@ -35,3 +35,20 @@ All firewall turned off, the client still can't read config using ${HOME}. Will 
 
 It is said that: 'If you use the spring-boot-starter-jdbc or spring-boot-starter-data-jpa “starters”, you automatically get a dependency to HikariCP.'
 https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html#boot-features-connect-to-production-database
+
+
+### Spring uploading files (or generic to Java?)
+(https://spring.io/guides/gs/uploading-files/)
+
+#### 13 Jul 2018 14:33
+
+My intention and question: "How to upload files to resources folder?"
+Googling result: Don't
+
+Why?
+1. Resources should be considered read-only. (https://stackoverflow.com/questions/36981703/how-to-upload-files-in-resources-folder-in-spring-rest)
+2. Redeploying WAR will delete them. (https://stackoverflow.com/questions/21063140/saving-file-to-resource-directory-using-spring)
+3. The WAR deploy space didn't intended as permanent file storage location (https://stackoverflow.com/questions/19139426/how-to-write-a-file-to-resource-images-folder-of-the-app)
+4. Still about the WAR, some servers do (either by default or by configuration) not expand the deployed WAR file into the local disk file system, but instead fully in the memory. (https://stackoverflow.com/questions/8885201/uploaded-image-only-available-after-refreshing-the-page/8889096#8889096)
+
+Conclusion: MUST use another folder, and NOT "resources/*"
