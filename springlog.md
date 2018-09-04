@@ -66,3 +66,10 @@ There are two ways (so far I know) too solve this:
 
 1. Disable the CSRF security, but our apps will be vulnerable to the attack.
 2. Include CSRF token in the request. Set the param name as "_csrf", the value must looks like "814f212c-ec6b-4db8-93ba-eec97cb063b2"
+
+#### 14 Sep 2018 19:11
+
+If Spring Security Enabled, with Thymeleaf, each form with post method will automatically added an <input name="_csrf" value="{token}"> element.
+
+Must add manually for REST API?
+Or forward from the form, because our arch is form -> controller -> rest controller -> db, i will try it, I'll update again with the result later.
