@@ -52,3 +52,17 @@ Why?
 4. Still about the WAR, some servers do (either by default or by configuration) not expand the deployed WAR file into the local disk file system, but instead fully in the memory. (https://stackoverflow.com/questions/8885201/uploaded-image-only-available-after-refreshing-the-page/8889096#8889096)
 
 Conclusion: MUST use another folder, and NOT "resources/*"
+
+### Spring REST POST/PUT/PATCH/DELETE method not supported, CSRF
+
+#### 14 Sep 2018 19:11
+
+Somehow when I fire the POST-method API, it returns "Request method 'POST' not supported" at the console.
+
+After some googling, it is because Spring Security's CSRF is enabled.
+Read here for the CSRF: https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+
+There are two ways (so far I know) too solve this:
+
+1. Disable the CSRF security, but our apps will be vulnerable to the attack.
+2. Include CSRF token in the request. Set the param name as "_csrf", the value must looks like "814f212c-ec6b-4db8-93ba-eec97cb063b2"
